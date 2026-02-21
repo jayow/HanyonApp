@@ -49,6 +49,14 @@ export function Header() {
           >
             GitHub
           </a>
+          <a
+            href="https://x.com/jayowtrades"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-neutral-900 transition-colors"
+          >
+            X
+          </a>
         </div>
       </nav>
     </header>
