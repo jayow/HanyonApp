@@ -15,5 +15,6 @@ export interface Project {
   description: string;
   techStack: string[];
   githubUrl: string;
+  url?: string;
   category: "analytics" | "defi" | "tools" | "other";
 }

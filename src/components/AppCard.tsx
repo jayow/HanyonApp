@@ -3,7 +3,7 @@ import type { Project } from "@/types";
 export function AppCard({ project }: { project: Project }) {
   return (
     <a
-      href={project.githubUrl}
+      href={project.url || project.githubUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="block border border-neutral-200 rounded-lg p-6 hover:border-neutral-400 transition-colors group"
