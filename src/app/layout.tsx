@@ -9,16 +9,60 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_URL = "https://hanyon.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Hanyon Analytics",
     template: "%s | Hanyon Analytics",
   },
   description:
-    "Analyst, builder, and researcher in Web3, crypto, and prediction markets.",
+    "Independent DeFi research, on-chain analytics, and open-source tools for Web3 and prediction markets.",
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "Hanyon Analytics",
+    title: "Hanyon Analytics",
+    description:
+      "Independent DeFi research, on-chain analytics, and open-source tools for Web3 and prediction markets.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Hanyon Analytics",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Hanyon Analytics",
+    description:
+      "Independent DeFi research, on-chain analytics, and open-source tools for Web3 and prediction markets.",
+    images: ["/logo.png"],
+  },
+  alternates: {
+    canonical: SITE_URL,
+    types: {
+      "application/rss+xml": `${SITE_URL}/feed.xml`,
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

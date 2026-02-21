@@ -4,7 +4,17 @@ import { AppCard } from "@/components/AppCard";
 
 export const metadata: Metadata = {
   title: "Apps",
-  description: "Tools and projects built for Web3 and prediction markets.",
+  description:
+    "Open-source tools and dashboards for DeFi, on-chain analytics, and prediction markets.",
+  openGraph: {
+    title: "Apps | Hanyon Analytics",
+    description:
+      "Open-source tools and dashboards for DeFi, on-chain analytics, and prediction markets.",
+    url: "https://hanyon.app/apps",
+  },
+  alternates: {
+    canonical: "https://hanyon.app/apps",
+  },
 };
 
 export default function AppsPage() {

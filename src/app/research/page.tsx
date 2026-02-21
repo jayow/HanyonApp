@@ -5,7 +5,16 @@ import { PostCard } from "@/components/PostCard";
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Writing about Web3, prediction markets, and on-chain analytics.",
+    "Independent research on DeFi, prediction markets, and on-chain analytics.",
+  openGraph: {
+    title: "Research | Hanyon Analytics",
+    description:
+      "Independent research on DeFi, prediction markets, and on-chain analytics.",
+    url: "https://hanyon.app/research",
+  },
+  alternates: {
+    canonical: "https://hanyon.app/research",
+  },
 };
 
 export default function ResearchPage() {
