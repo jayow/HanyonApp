@@ -1,0 +1,259 @@
+---
+title: "ONyc Risk Assessment: Reinsurance Yield on Solana"
+date: "2026-02-21"
+description: "A deep dive into OnRe's ONyc — the first fully licensed on-chain reinsurance token. What it is, how it works, and what the risks are."
+tags: ["defi", "solana", "risk-analysis", "rwa", "yield", "reinsurance"]
+published: true
+---
+
+We applied a 9-category weighted risk framework to ONyc (Onchain Yield Coin), a yield-bearing token backed by reinsurance premiums on Solana. This is our full analysis — what ONyc is, the institutional infrastructure behind it, how we scored it, and the risks that matter.
+
+*Disclosure: We hold an active position in ONyc. This is research, not financial advice.*
+
+## What Is ONyc?
+
+ONyc is the flagship product of OnRe (formerly Nayms), a Bermuda-licensed on-chain reinsurance company that describes itself as "the world's first fully licensed on-chain reinsurance company, bridging the $750 billion global reinsurance market with the transformative power of blockchain." [^1][^2]
+
+**This is not a stablecoin.** ONyc is a yield-bearing token whose NAV (Net Asset Value — the price per token based on underlying asset values) appreciates over time as reinsurance premiums accrue. Current NAV is ~$1.08, up from $1.00 at inception in May 2025. [^3]
+
+### How It Generates Yield
+
+OnRe channels stablecoin capital into private reinsurance placements — essentially acting as a collateral provider for insurance companies. When insurers need to offload risk (hurricanes, earthquakes, property damage), they pay premiums to reinsurers. OnRe captures those premiums on-chain.
+
+The yield comes from two sources:
+
+| Source | Contribution | What Generates It |
+|--------|-------------|-------------------|
+| Reinsurance premiums | ~8% | Capital deployed as collateral for private reinsurance placements through Guy Carpenter (Marsh McLennan) and Howden [^1][^4] |
+| Collateral returns | ~2-6% | Blended yield from a diversified collateral portfolio — US T-Bills, stablecoins, and yield-bearing tokens (see Collateral Structure below) |
+| **Total base yield** | **~10.25%** | |
+
+The key characteristic: reinsurance premiums are **uncorrelated to crypto markets**. When BTC drops 50% or funding rates go negative, people are still paying insurance on property and natural disasters. This yield depends on insurance loss ratios and catastrophe frequency — not token emissions, leverage demand, or market sentiment.
+
+### Collateral Structure
+
+ONyc operates a multi-collateral framework diversified across 10 assets. The current allocation, sourced from OnRe's [Transparency Dashboard](https://app.onre.finance/earn/transparency): [^16]
+
+| Asset | Allocation | APY | Category |
+|-------|-----------|-----|----------|
+| Short-Term US T-Bills | 28.7% | 3.66% | Government securities |
+| USDG (Paxos) | 20.3% | 3.53% | Regulated stablecoin |
+| USCC | 15.8% | 3.41% | Stablecoin |
+| syrupUSDC (Maple) | 14.7% | 4.60% | Yield-bearing (private credit) |
+| USDS (Sky/Maker) | 10.9% | 4.00% | Stablecoin |
+| sUSDe (Ethena) | 5.7% | 3.25% | Yield-bearing (basis trade) |
+| PRIME (Figure) | 2.0% | 8.00% | Yield-bearing (HELOCs) |
+| USDC (Circle) | 1.5% | 0.00% | Stablecoin |
+| USYC (Hashnote) | 0.4% | 1.82% | Tokenized treasury |
+
+The largest single allocation is US T-Bills at 28.7%, followed by USDG at 20.3%. sUSDe — which was the original first collateral layer at launch [^5] — has been reduced to just 5.7% as the portfolio diversified. This is a meaningful improvement from the single-asset collateral structure at inception.
+
+Each reinsurance pool operates as a legally distinct Segregated Account under Bermuda law — capital in one account cannot be cross-pledged or exposed to another. [^8] The full breakdown is also available on the [Dune Dashboard](https://dune.com/onre_finance/transparency-dashboard).
+
+## The Institutional Infrastructure
+
+What makes ONyc unusual in DeFi is the depth of its traditional finance (TradFi) infrastructure. Most yield-bearing tokens in DeFi rely entirely on crypto-native mechanisms. ONyc is backed by regulated insurance industry participants.
+
+### Bermuda BMA Dual License
+
+OnRe holds two licenses from the Bermuda Monetary Authority (BMA), making it the first reinsurer approved under both frameworks simultaneously: [^1][^9]
+
+- **Class IIGB (Innovative Insurer General Business)** — An insurance license under the Insurance Act 1978, specifically designed for insurance companies operating with digital assets. Requires a head office in Bermuda, minimum capital of BMD 120,000, a minimum liquidity ratio of 75% of relevant liabilities, and ongoing BMA supervision of management fitness and governance. [^10]
+
+- **Class F (Full) Digital Asset Business License** — A license under the Digital Asset Business Act (DABA) 2018 for operating digital asset businesses at scale. Requires minimum net assets of $100,000, at least 2 directors with BMA-approved senior representation in Bermuda, and compliance with AML/ATF requirements. [^11]
+
+This is not a generic offshore foundation. OnRe is regulated as both an insurance company and a digital asset business by a respected financial regulator — particularly for reinsurance, where Bermuda is a global hub.
+
+### Key Partners and Service Providers
+
+| Partner | Role | What They Do |
+|---------|------|-------------|
+| **Coinbase Prime** | Custodian | Institutional-grade crypto custody for ONyc's digital assets [^3] |
+| **Guy Carpenter** (Marsh McLennan) | Reinsurance Broker | One of the world's largest reinsurance brokers, handles placement of reinsurance contracts [^1][^4] |
+| **Howden** | Reinsurance Broker | Global insurance intermediary group, handles reinsurance placement [^1] |
+| **Apex Group** | Fund Administrator | Independent monthly NAV attestations (started January 2026) [^4] |
+| **Chainlink + Pyth Network** | Oracle Providers | On-chain NAV data delivery for real-time pricing and collateralization [^8][^12] |
+| **Harris & Trotter** | Financial Auditor | Financial statement auditing [^3] |
+
+### Team
+
+The team is fully doxxed with deep reinsurance and financial services backgrounds: [^4][^9]
+
+| Person | Role | Background |
+|--------|------|------------|
+| Dan Roberts | CEO | Multi-award entrepreneur, previously CEO of Nayms (OnRe's predecessor) |
+| Theodore Georgas | CTO | 20+ years experience, ex-Deutsche Bank, Merrill Lynch, Lehman Brothers |
+| Tunde Olowofila | Head of Reinsurance | ~20 years global reinsurance (London, Bermuda, Dubai), senior executive at Rhodium Re |
+
+### Backing
+
+OnRe raised a $6M token round from Coinbase Ventures, XBTO, Maven11, and others. Strategic backers include Ethena, Solana Ventures, and RockawayX. [^6][^13]
+
+## DeFi Composability
+
+Unlike many RWA (Real World Asset) tokens that sit idle in wallets, ONyc is designed for active use across Solana's DeFi ecosystem. As of February 2026, ONyc is integrated across **8 protocols** in 4 categories, with approximately **$149M in total DeFi TVL** (Total Value Locked). [^19]
+
+### Looping (Leveraged Yield)
+
+| Protocol | Assets | TVL | APY |
+|----------|--------|-----|-----|
+| Loopscale | ONyc/USDC | $23.22M | 18.01% |
+| Kamino | ONyc/USDC | $10.53M | 18.70% |
+| Kamino | ONyc/USDG | $9.43M | 19.48% |
+| Carrot | ONyc/USDC/USDG | $8.15M | 21.01% |
+| Elemental Fund | ONyc/USDC | $0.47M | 14.74% |
+
+### Yield Trading
+
+| Protocol | Assets | TVL | APY |
+|----------|--------|-----|-----|
+| Exponent | ONyc | $7.4M | 11.05% |
+| RateX | ONyc | $0.51M | 14.18% |
+
+### Lending & Borrowing
+
+| Protocol | Assets | TVL | APY |
+|----------|--------|-----|-----|
+| Kamino | ONyc (supply) | $36.15M | N/A |
+| Loopscale | USDC (supply) | $18.99M | 7.55% |
+| Kamino | USDG (supply) | $11.05M | 6.86% |
+| Kamino | USDC (supply) | $8.59M | 4.96% |
+| Kamino | USDS (supply) | $1.01M | 3.83% |
+
+### Liquidity Provision
+
+| Protocol | Pair | TVL |
+|----------|------|-----|
+| Orca | ONyc/USDC | $5.05M |
+| Raydium | ONyc/USDG | $4.95M |
+| Kamino | ONyc/USDG | $3.39M |
+| Orca | ONyc/JitoSOL | $0.21M |
+| Kamino | ONyc/JitoSOL | $0.04M |
+
+This composability is significant — ONyc holders aren't locked into a single exit path. The DeFi integrations create secondary liquidity that's independent of OnRe's direct redemption process. The $36.15M in Kamino lending alone represents substantial on-chain depth for the token.
+
+**Worth noting:** Liquidity provision is the thinnest category at ~$13.6M total across all LP pairs. For a $107M market cap asset, that's relatively shallow DEX depth — meaning large spot sells (>$1M) could face meaningful slippage. Most of the DeFi TVL sits in lending ($75.8M) and looping ($51.8M), which are leveraged positions that depend on LP depth for liquidations. This asymmetry is worth monitoring.
+
+## How We Scored It
+
+We applied a 9-category weighted risk framework inspired by [LlamaRisk's methodology](https://llamarisk.com). Every material claim was tagged with a confidence level (HIGH / MEDIUM / LOW) and cross-referenced against 2+ independent sources where possible.
+
+### Scoring Scale
+
+| Score | Meaning | Description |
+|-------|---------|-------------|
+| 5 | Excellent | Industry-leading. No material gaps. Battle-tested infrastructure. |
+| 4 | Good | Strong with minor gaps. Meets institutional standards. |
+| 3 | Adequate | Functional but with notable risks or missing elements. |
+| 2 | Below Average | Significant gaps that increase risk materially. |
+| 1 | Poor | Critical failures or missing entirely. High risk of loss. |
+
+### Score Breakdown
+
+| Category | Weight | Score | Key Finding |
+|----------|--------|-------|-------------|
+| Smart Contract | 15% | 3.5 | 5 audits from 2 firms (Quantstamp, Ackee Blockchain) including a Jan 2026 re-audit. Open source (Anchor/Rust on [GitHub](https://github.com/onre-finance/onre-sol)). No bug bounty program. [^15] |
+| Counterparty | 15% | 3.5 | Fully doxxed team with relevant TradFi and reinsurance credentials. Coinbase Prime custody. [^3] |
+| Market & Liquidity | 15% | 2.5 | ~$107M total asset value, but DEX (Decentralized Exchange) liquidity is thin relative to market cap. Redemption constraints exist. |
+| Oracle | 10% | 3.0 | Chainlink + Pyth Network NAV data infrastructure. [^8] NAV-based pricing is less manipulable than spot price oracles. |
+| Collateral | 15% | 4.0 | Diversified across 10 assets — largest is US T-Bills (28.7%), sUSDe reduced to 5.7%. Apex Group monthly attestation. [^4][^16] |
+| Economic Design | 10% | 3.5 | Real yield from insurance premiums — not emission-dependent. 20% performance fee (0% management, 0% subscription). [^3] |
+| Governance | 5% | 2.0 | Team-controlled. No on-chain governance mechanism currently. |
+| Regulatory | 5% | 4.0 | BMA dual-licensed (Class IIGB + Class F). Among the strongest regulatory postures for a DeFi yield product. [^9] |
+| Dependency | 10% | 3.0 | Diversified collateral reduces single-protocol risk. Depends on Coinbase Prime, Guy Carpenter/Howden, Chainlink/Pyth, and 9 collateral asset issuers. |
+
+**Final Score: B (3.28 / 5.00)**
+
+A B rating places ONyc in the "moderate risk, suitable for up to 10% of portfolio" tier. The score benefits from 5 published audits across 2 recognized firms and a well-diversified collateral portfolio across 10 assets. The main drags are governance (team-controlled, no on-chain governance) and market liquidity (thin DEX depth relative to market cap). A bug bounty program would push the score higher.
+
+## What Are the Risks?
+
+Transparency about risks is the whole point of a risk framework.
+
+### 1. Smart Contract Risk
+
+ONyc's Solana contracts have been audited 5 times by 2 firms — Quantstamp (4 audits) and Ackee Blockchain (1 audit) — with the most recent being a re-audit in January 2026. [^15] This is a solid audit history. However, no bug bounty program exists, meaning there's no ongoing incentive for white-hat researchers to find vulnerabilities between audits. The code is [open source on GitHub](https://github.com/onre-finance/onre-sol).
+
+A contract exploit could still drain on-chain funds regardless of how strong the underlying reinsurance business is — audits reduce this risk but don't eliminate it.
+
+**Mitigant:** The off-chain reinsurance capital exists separately from on-chain contracts — it's held in segregated accounts under Bermuda law. [^8] Coinbase Prime custodies the digital assets. [^3] If the contract is exploited, the reinsurance capital still exists. Whether OnRe would make token holders whole is a separate question.
+
+### 2. Hurricane Season (June - November)
+
+This is the one scenario where ONyc's yield source becomes a risk source. A catastrophic hurricane or earthquake season could trigger large reinsurance claims, reducing NAV. OnRe states a "95% probability of positive ROI" — which means there's a 5% probability of material loss in any given year. [^14]
+
+**Mitigant:** Reinsurance portfolios are diversified across geographies and peril types. A single event is unlikely to wipe the entire portfolio. But a historically bad season (multiple Category 5 hurricanes making landfall) could cause meaningful NAV decline.
+
+### 3. Collateral Counterparty Risk
+
+ONyc's collateral is spread across 10 assets from different issuers. [^16] No single asset exceeds 29% of the portfolio, but this means ONyc inherits risk from each underlying protocol — Paxos (USDG), Maple (syrupUSDC), Sky/Maker (USDS), Ethena (sUSDe), Figure (PRIME), and others. An issue with any major collateral asset could impact ONyc's NAV.
+
+**Mitigant:** The diversification itself is the mitigant. sUSDe — which was 100% of collateral at launch — is now just 5.7%. The largest allocation (28.7%) is US T-Bills, the lowest-risk asset class available. No single protocol failure would wipe the entire collateral base.
+
+### 4. Redemption Constraints
+
+Direct redemption through OnRe is not instant. RWA.xyz reports quarterly redemption windows with a 30-day notice period for institutional channels. [^3] The permissionless channel may have different terms. In a stress scenario, both protocol redemption and DEX exit (thin liquidity) could be constrained simultaneously.
+
+**Mitigant:** ONyc has multiple DeFi exit paths beyond OnRe's direct redemption. It's integrated across several Solana protocols — Kamino (lending/looping), Loopscale (leveraged vaults), Exponent (fixed yield via PT/YT splitting), and DEX liquidity on Orca and Raydium. [^12][^17][^18] Holders using lending markets exit through the protocol's liquidity, not OnRe's redemption queue. This is a meaningful difference for DeFi-native users.
+
+### 5. Concentration Risk
+
+Top 5 wallet holders control 61.59% of ONyc supply, and top 10 control 70.79%. [^3] A large holder exiting could impact DEX liquidity significantly.
+
+**Mitigant:** Institutional holders are more likely to use the primary redemption channel (direct with OnRe) than DEX selling, which would reduce impact on secondary market liquidity. But the concentration is worth monitoring.
+
+## Bottom Line
+
+ONyc offers something genuinely rare in DeFi: yield from an established, regulated real-world industry that doesn't depend on crypto market conditions. The institutional infrastructure — Bermuda BMA licensing, Coinbase Prime custody, Guy Carpenter and Howden for reinsurance placement, Apex Group attestation — is deeper than what most yield-bearing tokens in the space can point to.
+
+With 5 audits from 2 recognized firms, a B rating, and the institutional infrastructure behind it, ONyc sits in a tier above most yield-bearing tokens on Solana. The main gaps are governance (team-controlled) and DEX liquidity depth relative to its $107M market cap.
+
+The open questions remain: how the protocol performs through a full catastrophe season, whether DEX liquidity scales with AUM, and when on-chain governance replaces team control. Those are the gaps between a B and a B+.
+
+---
+
+## References
+
+[^1]: [OnRe — About Us](https://www.onre.finance/about-us). "The world's first fully licensed on-chain reinsurance company." Trusted partners include Guy Carpenter and the Government of Bermuda.
+
+[^2]: [Insurance Business Magazine — "Reinsurance comes on-chain as OnRe launches tokenized yield model"](https://www.insurancebusinessmag.com/reinsurance/news/breaking-news/reinsurance-comes-onchain-as-onre-launches-tokenized-yield-model-536597.aspx)
+
+[^3]: [RWA.xyz — ONyc Asset Page](https://app.rwa.xyz/assets/ONyc). Custodian: Coinbase Prime. Auditor: Harris & Trotter. Total Asset Value: $107.8M. Performance fee: 20%.
+
+[^4]: [Insurance Business Magazine — "OnRe launches ONyc to turn stablecoins into yield-generating reinsurance collateral"](https://www.insurancebusinessmag.com/reinsurance/news/breaking-news/onre-launches-onyc-to-turn-stablecoins-into-yieldgenerating-reinsurance-collateral-541497.aspx). Apex Group attestation, team appointments.
+
+[^5]: [OnRe Blog — "OnRe Evolves ONe Into ONyc"](https://www.onre.finance/blog/onre-evolves-one-into-onyc-to-power-stablecoin-adoption-across-defi-and-traditional-markets). Multi-collateral framework, sUSDe as first collateral layer, roadmap to diversify.
+
+[^6]: [PRNewswire / GlobeNewswire](https://www.globenewswire.com/news-release/2025/10/01/3159830/0/en/OnRe-Introduces-ONyc-Global-Access-The-Permissionless-Path-to-Onchain-Institutional-Yield.html). Strategic backers: Ethena, Solana Ventures, RockawayX.
+
+[^7]: [OnRe Docs — Capital Providers Introduction](https://docs.onre.finance/for-capital-providers/introduction). Collateral composition: stablecoins, cash equivalents, staked stablecoins, Treasury bill exposure.
+
+[^8]: [OnRe Blog — "Bringing Real-World Reinsurance Onchain"](https://www.onre.finance/blog/bringing-real-world-reinsurance-onchain-how-onre-and-onyc-unlock-regulated-verifiable-yield). Segregated Account Company structure, Chainlink + Pyth Network oracles, 12-16% blended yield target.
+
+[^9]: [Insurtech Gateway — OnRe profile](https://insurtechgateway.com). BMA Class IIGB + Class F licenses confirmed. Team backgrounds.
+
+[^10]: [BMA — Insurance Licensing](https://www.bma.bm/insurance-licensing). Class IIGB requirements: BMD 120,000 minimum capital, 75% liquidity ratio, head office in Bermuda.
+
+[^11]: [BMA — Digital Assets Licensing](https://www.bma.bm/digital-assets-licensing). Class F requirements: $100,000 minimum net assets, 2+ directors, AML/ATF compliance.
+
+[^12]: [OnRe Blog — "ONyc Launches on Kamino"](https://www.onre.finance/blog/onyc-launches-on-kamino-unlocking-real-world-yield-and-collateral-utility-in-solana-defi). Kamino integration, Chainlink NAV pricing, USDG incentive pool.
+
+[^13]: [GlobeNewswire — OnRe $6M token round](https://www.globenewswire.com). Coinbase Ventures, XBTO, Maven11.
+
+[^14]: OnRe documentation. "95% probability of positive ROI" — self-reported, not independently verified.
+
+[^15]: [OnRe Docs — Independent Audits](https://docs.onre.finance/legal/security-and-verification/independent-audits). 5 audits: Quantstamp (Apr 2025, May 2025, Sep 2025, Jan 2026) and Ackee Blockchain (Nov 2025). Certificates linked from docs.
+
+[^16]: [OnRe Transparency Dashboard](https://app.onre.finance/earn/transparency). Live collateral breakdown across 10 assets. Also available on [Dune](https://dune.com/onre_finance/transparency-dashboard).
+
+[^17]: [OnRe Blog — "ONyc Launches Vault on Loopscale"](https://www.onre.finance/blog/onyc-launches-vault-on-loopscale-to-unlock-leveraged-usdc-strategies). Leveraged USDC strategies via PT-ONyc collateral.
+
+[^18]: [OnRe Blog — "ONyc Meets Exponent"](https://www.onre.finance/blog/onyc-meets-exponent-real-world-yield-gets-a-defi-upgrade). Fixed yield (PT-ONyc ~12%+ APY), leveraged yield (YT-ONyc), and liquidity vaults.
+
+[^19]: [OnRe DeFi Opportunities Dashboard](https://app.onre.finance/earn/defi). Live DeFi integrations across 8 protocols: Kamino, Loopscale, Exponent, RateX, Carrot, Elemental Fund, Orca, Raydium.
+
+---
+
+*This assessment was conducted using a 9-category weighted risk framework with a mandatory verification layer. Every material claim was tagged HIGH/MEDIUM/LOW confidence and cross-referenced against 2+ independent sources. Full methodology available on request.*
+
+*Disclaimer: This is research, not financial advice. We hold an active position in ONyc. Do your own research.*
