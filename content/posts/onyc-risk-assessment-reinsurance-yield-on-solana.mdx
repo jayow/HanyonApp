@@ -20,15 +20,29 @@ ONyc is the flagship product of OnRe (formerly Nayms), a Bermuda-licensed on-cha
 
 OnRe channels stablecoin capital into private reinsurance placements — essentially acting as a collateral provider for insurance companies. When insurers need to offload risk (hurricanes, earthquakes, property damage), they pay premiums to reinsurers. OnRe captures those premiums on-chain.
 
-The yield comes from two sources:
+The yield comes from two sources, visible on OnRe's [Transparency Dashboard](https://app.onre.finance/earn/transparency): [^16]
 
-| Source | Contribution | What Generates It |
-|--------|-------------|-------------------|
-| Reinsurance premiums | ~8% | Capital deployed as collateral for private reinsurance placements through Guy Carpenter (Marsh McLennan) and Howden [^1][^4] |
-| Collateral returns | ~2-6% | Blended yield from a diversified collateral portfolio — US T-Bills, stablecoins, and yield-bearing tokens (see Collateral Structure below) |
-| **Total base yield** | **~10.25%** | |
+| Source | Current APY | What Generates It |
+|--------|------------|-------------------|
+| Base Yield (Collateral) | 3.8% | Blended return from a diversified collateral portfolio — US T-Bills, stablecoins, and yield-bearing tokens (see Collateral Structure below) |
+| Underwriting Returns | 6.5% | Premiums earned from active reinsurance placements brokered through Guy Carpenter (Marsh McLennan) and Howden (see Underwriting Portfolio below) [^1][^4] |
+| **Total 12-Month APY** | **10.25%** | |
 
-The key characteristic: reinsurance premiums are **uncorrelated to crypto markets**. When BTC drops 50% or funding rates go negative, people are still paying insurance on property and natural disasters. This yield depends on insurance loss ratios and catastrophe frequency — not token emissions, leverage demand, or market sentiment.
+The key characteristic: underwriting returns are **uncorrelated to crypto markets**. When BTC drops 50% or funding rates go negative, people are still paying insurance on property and natural disasters. This yield depends on insurance loss ratios and catastrophe frequency — not token emissions, leverage demand, or market sentiment.
+
+### Underwriting Portfolio
+
+The 6.5% underwriting return comes from 9 active reinsurance deals across 3 contract types: [^16][^20]
+
+| Contract Type | Active Deals | Description |
+|---------------|-------------|-------------|
+| Industry Loss Warranty (ILW) | 5 | Parametric contracts that pay out when industry-wide losses exceed a predefined threshold — no individual claim adjudication needed |
+| Excess of Loss (XoL) | 2 | Traditional reinsurance where OnRe covers losses above a specified retention level |
+| Specialty | 2 | Specialized lines including D&O (Directors & Officers liability) and contingency coverage |
+
+Notable sub-category returns within the underwriting portfolio include **D&O at 3.9% APY** and **Contingency at 11.4% APY**. The blended 6.5% reflects diversification across peril types, geographies, and risk profiles — no single deal dominates the return.
+
+This is the core of what makes ONyc different from other DeFi yield products: the underwriting returns come from real insurance contracts with real counterparties paying real premiums, brokered through two of the world's largest reinsurance intermediaries.
 
 ### Collateral Structure
 
@@ -157,7 +171,7 @@ We applied a 9-category weighted risk framework inspired by [LlamaRisk's methodo
 | Market & Liquidity | 15% | 2.5 | ~$107M total asset value, but DEX (Decentralized Exchange) liquidity is thin relative to market cap. Redemption constraints exist. |
 | Oracle | 10% | 3.0 | Chainlink + Pyth Network NAV data infrastructure. [^8] NAV-based pricing is less manipulable than spot price oracles. |
 | Collateral | 15% | 4.0 | Diversified across 10 assets — largest is US T-Bills (28.7%), sUSDe reduced to 5.7%. Apex Group monthly attestation. [^4][^16] |
-| Economic Design | 10% | 3.5 | Real yield from insurance premiums — not emission-dependent. 20% performance fee (0% management, 0% subscription). [^3] |
+| Economic Design | 10% | 3.5 | Real yield from 9 active reinsurance deals (6.5%) + collateral base yield (3.8%). Not emission-dependent. 20% performance fee (0% management, 0% subscription). [^3][^20] |
 | Governance | 5% | 2.0 | Team-controlled. No on-chain governance mechanism currently. |
 | Regulatory | 5% | 4.0 | BMA dual-licensed (Class IIGB + Class F). Among the strongest regulatory postures for a DeFi yield product. [^9] |
 | Dependency | 10% | 3.0 | Diversified collateral reduces single-protocol risk. Depends on Coinbase Prime, Guy Carpenter/Howden, Chainlink/Pyth, and 9 collateral asset issuers. |
@@ -251,6 +265,8 @@ The open questions remain: how the protocol performs through a full catastrophe 
 [^18]: [OnRe Blog — "ONyc Meets Exponent"](https://www.onre.finance/blog/onyc-meets-exponent-real-world-yield-gets-a-defi-upgrade). Fixed yield (PT-ONyc ~12%+ APY), leveraged yield (YT-ONyc), and liquidity vaults.
 
 [^19]: [OnRe DeFi Opportunities Dashboard](https://app.onre.finance/earn/defi). Live DeFi integrations across 8 protocols: Kamino, Loopscale, Exponent, RateX, Carrot, Elemental Fund, Orca, Raydium.
+
+[^20]: [OnRe Transparency Dashboard — Yield & Underwriting](https://app.onre.finance/earn/transparency). Base Yield 3.8%, Underwriting Returns 6.5%, Total 12-Month APY 10.25%. 9 active deals: Industry Loss Warranty (5), Excess of Loss (2), Specialty (2).
 
 ---
 
