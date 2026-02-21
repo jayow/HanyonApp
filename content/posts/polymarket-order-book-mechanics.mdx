@@ -1,0 +1,50 @@
+---
+title: "Understanding Polymarket's Order Book Mechanics"
+date: "2026-02-20"
+description: "A deep dive into how Polymarket's CLOB works, the role of market makers, and what the order book tells us about market sentiment."
+tags: ["polymarket", "prediction-markets", "analysis"]
+published: true
+---
+
+Prediction markets have become one of the most reliable tools for aggregating information about future events. Polymarket, built on Polygon, uses a Central Limit Order Book (CLOB) that operates differently from AMM-based alternatives.
+
+## How the CLOB Works
+
+Unlike an AMM where liquidity is provided to a pool, Polymarket's CLOB matches buy and sell orders directly. This has several implications:
+
+| Feature          | CLOB (Polymarket)        | AMM-Based               |
+|------------------|--------------------------|--------------------------|
+| Price Discovery  | Order-driven             | Formula-driven           |
+| Slippage         | Depends on book depth    | Predictable via curve    |
+| Market Making    | Active limit orders      | Passive LP positions     |
+| Capital Efficiency | Higher for tight spreads | Lower, distributed across range |
+
+## Reading the Order Book
+
+The spread between the best bid and best ask tells us about:
+
+1. **Market uncertainty** — wider spreads indicate less consensus
+2. **Liquidity depth** — how much volume can trade before moving the price
+3. **Market maker activity** — tight spreads suggest active makers
+
+```typescript
+interface OrderBookLevel {
+  price: number;   // 0.00 to 1.00
+  size: number;    // in USDC
+  side: "buy" | "sell";
+}
+```
+
+## What This Means for Traders
+
+Understanding the order book mechanics gives you an edge in two ways:
+
+> The market is not just a price — it's a distribution of opinions with varying conviction levels.
+
+First, you can identify markets where the spread is wide relative to volume, suggesting inefficiency. Second, you can watch for order book imbalances that precede price moves.
+
+This is the kind of data that tools like the [polymarket-dashboard](https://github.com/jayow/polymarket-dashboard) help visualize and make actionable.
+
+---
+
+*This is an example research post. Replace it with your own analysis.*

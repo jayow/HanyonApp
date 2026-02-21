@@ -1,0 +1,19 @@
+export interface PostFrontmatter {
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  published: boolean;
+}
+
+export interface PostMeta extends PostFrontmatter {
+  slug: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  techStack: string[];
+  githubUrl: string;
+  category: "analytics" | "defi" | "tools" | "other";
+}
