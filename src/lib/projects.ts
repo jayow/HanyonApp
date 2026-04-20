@@ -2,6 +2,15 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    name: "exponent-dashboard",
+    description:
+      "On-chain analytics for Exponent Finance — Pendle-style yield-stripping on Solana. Historical TVL, fee revenue, implied APY reconstructed from AMM formulas, holder activity, market rollover, and TGE overlays.",
+    techStack: ["TypeScript", "Next.js", "Python", "Solana", "Helius"],
+    githubUrl: "https://github.com/jayow/exponent-dashboard",
+    url: "https://exponent.hanyon.app/",
+    category: "defi",
+  },
+  {
     name: "polymarket-dashboard",
     description:
       "Interactive dashboard for tracking and analyzing Polymarket prediction market data, positions, and market trends.",
