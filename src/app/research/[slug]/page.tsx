@@ -118,9 +118,11 @@ export default async function PostPage({ params }: PostPageProps) {
           <h1 className="text-3xl font-bold tracking-tight mt-2 mb-4">
             {frontmatter.title}
           </h1>
-          <p className="text-lg text-neutral-500">
-            {frontmatter.description}
-          </p>
+          {frontmatter.description && (
+            <p className="text-lg text-neutral-500">
+              {frontmatter.description}
+            </p>
+          )}
         </header>
 
         <div>

@@ -1,0 +1,294 @@
+---
+title: "What Would It Take to Tokenize Philippine Securities?"
+date: "2026-05-08"
+description: ""
+tags: ["philippines", "tokenization", "rwa", "securities", "research"]
+published: true
+---
+
+*A Three-Track Research Deep Dive, Hanyon Analytics Research*
+
+## Executive Summary
+
+Several of the regulatory and infrastructural building blocks that would support tokenizing Philippine private securities are already in place, based on publicly available information. The questions that remain appear to be more operational and coordinative than foundational.
+
+**Key proof points already on record:**
+- The Bureau of the Treasury (BTr, the Philippine government's debt management agency) completed a PHP 15 billion tokenized government bond issuance in November 2023, raising 50 percent above its initial PHP 10 billion target <sup><a href="https://business.inquirer.net/432006/ph-to-start-selling-tokenized-treasury-bonds" target="_blank" rel="noopener">1</a>,<a href="https://www.globalgovernmentfinance.com/philippines-offers-first-tokenised-treasury-bonds-in-digital-technology-drive/" target="_blank" rel="noopener">28</a></sup>
+- The BTr has extended distribution of government securities to retail investors through PDAX (Philippine Digital Asset Exchange), with tokenized retail Government Bonds via GCash and PDAX announced as the next phase of the rollout <sup><a href="https://pdax.ph/learn/treasury-bonds-are-now-available-on-pdax-in-partnership-with-bonds-ph/" target="_blank" rel="noopener">2</a>,<a href="https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/" target="_blank" rel="noopener">3</a></sup>
+- The Bangko Sentral ng Pilipinas graduated PHPC, the first regulated peso-backed stablecoin, from its sandbox in July 2025 <sup><a href="https://coins.ph/blog/phpc-exits-sandbox/" target="_blank" rel="noopener">4</a></sup>
+- The Securities and Exchange Commission (SEC) launched the Strategic Sandbox under Section 37 of the Securities Regulation Code (SRC) in 2024 and explicitly invited Crypto-Asset Service Provider (CASP) and other innovative applicants in 2025 <sup><a href="https://cruzmarcelo.com/sec-introduces-a-regulatory-sandbox-to-foster-the-growth-of-innovative-products-and-services-in-the-philippines/" target="_blank" rel="noopener">5</a>,<a href="https://coingeek.com/philippines-opens-sandbox-for-crypto-service-providers/" target="_blank" rel="noopener">6</a></sup>
+- Philippine Stock Exchange (PSE) shares already settle electronically, not as paper certificates, with the Philippine Depository and Trust Corporation (PDTC) holding shares centrally and PCD Nominee Corp holding legal title under a structure that is structurally compatible with tokenization <sup><a href="https://www.tcs.com/who-we-are/newsroom/press-release/philippines-depository-tcs-bancs" target="_blank" rel="noopener">7</a></sup>
+
+**Three structural paths exist for tokenizing securities:**
+- A 1:1 collateralized wrapper that holds underlying securities in a custody account
+- A native onchain issuance where the token is the share itself
+- A synthetic or derivative offering price exposure without share ownership
+
+**The most achievable near-term path** is a 1:1 wrapper for Real Estate Investment Trusts (REITs) or corporate bonds, sequenced through Strategic Sandbox approval.
+
+**What is still missing.** Specific tokenized private securities rules in the Philippines have not yet been issued by the SEC. Operational arrangements with PDTC for tokenization use cases are untested. The synthetic path is constrained for domestic targeting due to active SEC enforcement against unauthorized derivative platforms.
+
+*Scope. This research is informational and exploratory. It does not constitute investment, legal, or tax advice.*
+
+---
+
+## Why This Matters Now
+
+The global tokenized real-world asset (RWA) market crossed $24 billion in mid-2025 and grew to between $30 billion and $36 billion by early 2026 <sup><a href="https://blog.redstone.finance/2025/06/26/real-world-assets-in-onchain-finance-report/" target="_blank" rel="noopener">9</a>,<a href="https://investax.io/blog/q3-2025-real-world-asset-tokenization-market-report" target="_blank" rel="noopener">10</a>,<a href="https://coinlaw.io/asset-tokenization-statistics/" target="_blank" rel="noopener">11</a></sup>. Tokenized US Treasuries alone reached $7.4 billion, dominated by BlackRock's BUIDL fund at $2.9 billion in assets under management (AUM) <sup><a href="https://coinlaw.io/asset-tokenization-statistics/" target="_blank" rel="noopener">11</a>,<a href="https://www.propellerindustries.com/rwa-tokenization-the-10-trillion-bridge-between-tradfi-and-defi/" target="_blank" rel="noopener">12</a></sup>. Tokenized stocks specifically grew from less than $30 million at the start of 2025 to over $700 million by year end, with Backed Finance and Ondo Global Markets controlling roughly 95 percent of the market <sup><a href="https://thedefiant.io/news/defi/rwas-became-wall-street-s-gateway-to-crypto-in-2025" target="_blank" rel="noopener">13</a></sup>. Almost all volume is concentrated in US large caps, with emerging market equities essentially absent from the tokenization stack so far <sup><a href="https://thedefiant.io/news/defi/rwas-became-wall-street-s-gateway-to-crypto-in-2025" target="_blank" rel="noopener">13</a></sup>.
+
+The Philippines has sustained one of the highest grassroots crypto adoption rates in the world. Chainalysis ranked the country ninth in its 2025 Global Crypto Adoption Index, after peaking at second in 2022 <sup><a href="https://bitpinas.com/feature/ph-chainalysis-2025/" target="_blank" rel="noopener">14</a>,<a href="https://www.chainalysis.com/blog/2025-global-crypto-adoption-index/" target="_blank" rel="noopener">15</a></sup>. Coins.ph alone handles over a billion dollars in annual crypto transfers <sup><a href="https://photomadic.com/global-crypto-adoption-index-by-country-2025-top-nations-and-what-really-drives-adoption" target="_blank" rel="noopener">16</a></sup>. PDAX has roughly four million users <sup><a href="https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/" target="_blank" rel="noopener">3</a></sup>. GCash, the dominant Philippine mobile wallet, has 94 million users <sup><a href="https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/" target="_blank" rel="noopener">3</a></sup>.
+
+The PSE in 2025 reported daily average turnover of PHP 7.33 billion, up 20.10 percent year on year, against a domestic market capitalization of PHP 13.65 trillion at year end <sup><a href="https://www.pse.com.ph/pse-marks-last-trading-day-of-2025/" target="_blank" rel="noopener">17</a></sup>. Foreign net selling reached PHP 51.78 billion for the year <sup><a href="https://www.pse.com.ph/pse-marks-last-trading-day-of-2025/" target="_blank" rel="noopener">17</a></sup>. PSE retail accounts grew to 2.86 million in 2024, up 50.1 percent from 1.91 million in 2023 <sup><a href="https://www.bworldonline.com/corporate/2025/06/06/677598/pse-reports-50-surge-in-stock-market-accounts-in-2024/" target="_blank" rel="noopener">18</a></sup>. Overseas Filipino remittances hit a record $35.63 billion in 2025, accounting for 7.3 percent of Gross Domestic Product (GDP) <sup><a href="https://www.pna.gov.ph/articles/1269149" target="_blank" rel="noopener">19</a>,<a href="https://www.bworldonline.com/top-stories/2026/02/17/730931/ofw-remittances-hit-record-35-6b/" target="_blank" rel="noopener">20</a></sup>. The United States, the single largest sender, will see a 1 percent remittance tax take effect in 2026, reducing the after-tax value of dollar inflows <sup><a href="https://www.bworldonline.com/top-stories/2026/02/17/730931/ofw-remittances-hit-record-35-6b/" target="_blank" rel="noopener">20</a></sup>.
+
+In short: there is a large crypto-native domestic capital base, a stock exchange with thin liquidity and high friction for retail entry, and emerging regulatory infrastructure that has already demonstrated a working tokenization pathway for government debt.
+
+---
+
+## Track 1: The Legal Landscape
+
+### How the SRC defines a security
+
+Republic Act 8799, the Securities Regulation Code, governs the offering and trading of securities in the Philippines. The SRC defines securities by economic function, not by form. It applies a substance-over-form test similar to the Howey analysis used in US courts <sup><a href="https://www.respicio.ph/commentaries/are-digital-assets-required-to-be-registered-with-the-sec-in-the-philippines" target="_blank" rel="noopener">21</a></sup>. Any digital asset that promises returns, profit-sharing, dividends, or capital appreciation derived primarily from the efforts of others is treated as a security regardless of how it is labeled <sup><a href="https://www.respicio.ph/commentaries/are-digital-assets-required-to-be-registered-with-the-sec-in-the-philippines" target="_blank" rel="noopener">21</a></sup>. Equity, debt, and revenue-sharing tokens all fall inside this perimeter.
+
+The SEC first formalized its approach to digital assets through draft Digital Asset and Token Offerings Rules (the DATO Rules) in February 2019 <sup><a href="https://blog.stomarket.com/defining-security-tokens-list-of-all-countries-with-legal-definitions-of-digital-securities-6b19eab6c330" target="_blank" rel="noopener">22</a></sup>. The DATO Rules anchored Philippine Security Token Offering (STO) regulation in the existing securities framework, requiring registration unless an exemption applies <sup><a href="https://blog.stomarket.com/defining-security-tokens-list-of-all-countries-with-legal-definitions-of-digital-securities-6b19eab6c330" target="_blank" rel="noopener">22</a></sup>. The 2019 draft did not crystallize into final rules but it established the principle that has carried through subsequent SEC guidance.
+
+A tokenized securities issuer would face the same registration requirements as any traditional securities offering: a registration statement with the SEC, a prospectus, audited financials, legal opinions, and smart contract audits <sup><a href="https://www.respicio.ph/commentaries/are-digital-assets-required-to-be-registered-with-the-sec-in-the-philippines" target="_blank" rel="noopener">21</a></sup>. Pre-filing consultations with SEC staff are advisable. Unregistered offerings carry criminal liability under the SRC <sup><a href="https://bitcoinke.io/2026/04/sec-philippines-investor-alert-warning-over-crypto-platforms/" target="_blank" rel="noopener">8</a></sup>.
+
+### The Strategic Sandbox
+
+Through Memorandum Circular No. 9 Series of 2024, the SEC launched the Strategic Sandbox, branded as Stratbox <sup><a href="https://cruzmarcelo.com/sec-introduces-a-regulatory-sandbox-to-foster-the-growth-of-innovative-products-and-services-in-the-philippines/" target="_blank" rel="noopener">5</a></sup>. The framework is grounded in Section 37 of the SRC, which mandates the SEC to encourage market competitiveness by issuing rules for innovative securities, trading markets, and technology-based ventures <sup><a href="https://www.grantthornton.com.ph/alerts-and-publications/technical-alerts/accounting-alerts/2024/sec-stratbox-strategic-sandbox/" target="_blank" rel="noopener">23</a></sup>. Stratbox is the entry point for products that do not fit cleanly into existing licensing categories. The SEC may modify or relax specific licensing, registration, compliance, or other regulatory requirements during the sandbox period <sup><a href="https://elegal.ph/sec-launches-strategic-sandbox-stratbox/" target="_blank" rel="noopener">24</a></sup>. In April 2025 the SEC opened applications targeting Crypto-Asset Service Providers and explicitly invited applications from other innovative entities <sup><a href="https://coingeek.com/philippines-opens-sandbox-for-crypto-service-providers/" target="_blank" rel="noopener">6</a></sup>.
+
+PHPC's path through the BSP regulatory sandbox is the closest comparable benchmark. Coins.ph began coordinating with BSP in early 2023, received sandbox approval in May 2024, met its key performance indicators within two months, and graduated in July 2025 <sup><a href="https://coins.ph/blog/phpc-exits-sandbox/" target="_blank" rel="noopener">4</a>,<a href="https://bitpinas.com/regulation/phpc-exits-sandbox/" target="_blank" rel="noopener">25</a></sup>. That is roughly two and a half years from initial regulator engagement to public deployment for a stablecoin product. A securities token product would face a similar runway, though SEC and BSP have separate frameworks.
+
+### CASP rules and licensing
+
+In May 2025 the SEC published the CASP framework <sup><a href="https://sumsub.com/media/news/the-philippines-issue-new-crypto-rules/" target="_blank" rel="noopener">26</a></sup>. It requires any entity offering crypto-asset services to Filipinos to be incorporated locally, maintain at least PHP 100 million in paid-up capital, staff a local office, and file ongoing disclosures <sup><a href="https://sumsub.com/media/news/the-philippines-issue-new-crypto-rules/" target="_blank" rel="noopener">26</a></sup>. Foreign platforms that solicit Philippine investment without registration are now subject to active enforcement <sup><a href="https://bitcoinke.io/2026/04/sec-philippines-investor-alert-warning-over-crypto-platforms/" target="_blank" rel="noopener">8</a></sup>.
+
+Based on the existing licensing framework, a tokenized securities issuer would likely need a combination of credentials: either a CASP license or a partnership with an existing CASP-licensed entity, a Stratbox sandbox grant for the tokenization activity itself, and traditional broker-dealer or transfer agent registration depending on the structure. The exact combination is not codified anywhere as a single bundled requirement and would be determined through pre-filing consultations with the SEC. Existing Philippine Virtual Asset Service Providers (VASPs) like Coins.ph and PDAX already hold parts of this stack <sup><a href="https://coins.ph/blog/phpc-exits-sandbox/" target="_blank" rel="noopener">4</a>,<a href="https://photomadic.com/global-crypto-adoption-index-by-country-2025-top-nations-and-what-really-drives-adoption" target="_blank" rel="noopener">16</a></sup>.
+
+### Custody and depository
+
+Philippine securities settle electronically rather than as paper certificates. The PDTC, part of the PDS Group, is the central depository for both stocks and corporate bonds <sup><a href="https://www.tcs.com/who-we-are/newsroom/press-release/philippines-depository-tcs-bancs" target="_blank" rel="noopener">7</a></sup>. PDTC records ownership in a book-entry system, while legal title is held by PCD Nominee Corp on behalf of investors. Beneficial ownership flows through to investors via their broker accounts <sup><a href="https://filgit.com/blog/stocks/what-happens-to-your-pse-stocks-if-your-broker-shuts-down" target="_blank" rel="noopener">27</a></sup>.
+
+This setup is potentially compatible with tokenization. An issuer could in principle interface with the existing nominee structure at the legal title layer while issuing tokens that represent beneficial ownership on chain. Whether PDTC will agree to such an arrangement, and on what terms, is the central operational question for any wrapper model. The BTr has demonstrated a workable parallel structure on the government securities side, running its own blockchain-based registry alongside the existing scripless registry, with the existing registry as the primary record <sup><a href="https://www.globalgovernmentfinance.com/philippines-offers-first-tokenised-treasury-bonds-in-digital-technology-drive/" target="_blank" rel="noopener">28</a></sup>.
+
+### The foreign ownership problem
+
+Philippine law caps foreign ownership in numerous sectors. The most binding is the constitutional 60-40 rule, which requires at least 60 percent Filipino ownership for land, mass media, and traditionally defined public utilities <sup><a href="https://www.aseanbriefing.com/news/foreign-ownership-rules-in-the-philippines-whats-allowed-and-restricted/" target="_blank" rel="noopener">29</a></sup>. The Foreign Investment Negative List adds caps in telecommunications, retail trade below certain capital thresholds, natural resources, infrastructure, advertising, and others <sup><a href="https://gulfnews.com/business/philippine-foreign-ownership-rules-updated-what-it-means-for-global-investors-1.500510016" target="_blank" rel="noopener">30</a></sup>.
+
+Tokenized securities globally do not typically deal with this kind of granular nationality cap. Most existing platforms sidestep the problem by blanket-excluding entire jurisdictions. Backed Finance's xStocks, for example, are not available to US persons because the issuer is not registered with the US SEC <sup><a href="https://blog.quicknode.com/xstocks-solana-tokenized-stocks-2025/" target="_blank" rel="noopener">35</a></sup>. The exclusion is geographic and absolute, not a per-issuer percentage cap. The Philippine 60-40 rule is structurally different: it requires the issuer to track foreign holdings on a continuous basis and prevent any transfer that would push the cap over its limit.
+
+This is technically achievable but adds operational complexity that no major tokenized equity issuer currently handles at this granularity. The practical implication is that names without foreign ownership caps are cleaner candidates for early tokenization. Industries without caps include financials, holding companies, food and beverage, and suitably structured REITs. Names like Ayala Corporation, BDO Unibank, and Jollibee Foods have no foreign ownership cap and would be more straightforward first candidates from this perspective. Names like Meralco (utilities) and PLDT (telecommunications) face the constraint and would need additional design work to handle nationality tracking.
+
+### Tax handling
+
+For a wrapper structure, the issuer has to handle dividend withholding tax based on the residency of every token holder at the dividend record date. Existing tokenized US equity issuers handle this in different ways. xStocks bundles dividends into the token's value: the Swiss-based entity that holds the underlying shares pays withholding tax at the source level, then the net amount flows back into the token's price <sup><a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-341" target="_blank" rel="noopener">40</a>,<a href="https://blog.quicknode.com/xstocks-solana-tokenized-stocks-2025/" target="_blank" rel="noopener">35</a></sup>. Ondo restricts USDY to non-US investors and OUSG to qualified US purchasers, which simplifies the tax matrix on each side <sup><a href="https://github.com/ondoprotocol/usdy" target="_blank" rel="noopener">55</a>,<a href="https://changehero.io/blog/what-is-ondo-crypto/" target="_blank" rel="noopener">56</a></sup>. BlackRock's BUIDL handles tax reporting through Securitize's role as transfer agent for US-registered investors <sup><a href="https://build.avax.network/integrations/securitize" target="_blank" rel="noopener">41</a></sup>. The Philippine equivalent would need to choose between a similar issuer-level mechanism that bundles tax into the token value, or per-holder tracking through the same KYC and identity layer used for ownership compliance.
+
+Government securities are tax-simpler since interest carries a flat final withholding tax for most holders, which is part of why the BTr's tokenized bond pilots have moved faster than any tokenized equity initiative <sup><a href="https://business.inquirer.net/432006/ph-to-start-selling-tokenized-treasury-bonds" target="_blank" rel="noopener">1</a>,<a href="https://pdax.ph/learn/treasury-bonds-are-now-available-on-pdax-in-partnership-with-bonds-ph/" target="_blank" rel="noopener">2</a></sup>.
+
+---
+
+## Track 2: The Technical Architecture
+
+### Three structural models
+
+There are three structurally different ways to put Philippine securities onchain, each with different requirements.
+
+**The 1:1 collateralized wrapper.** The issuer holds underlying securities in a regulated custody account and issues tokens against the custodial pool. Token holders gain economic exposure but typically not voting rights. This is the model used by Backed Finance for xStocks and by Ondo Global Markets for tokenized US equities <sup><a href="https://thedefiant.io/news/defi/rwas-became-wall-street-s-gateway-to-crypto-in-2025" target="_blank" rel="noopener">13</a>,<a href="https://www.kraken.com/xstocks" target="_blank" rel="noopener">34</a></sup>. The wrapper is the fastest to market because it does not change the underlying share register. The custodian holds the actual shares; the issuer creates separate tokens that represent claims against the custodial pool. The issuer is usually a separately incorporated entity set up offshore for this specific purpose. Backed Finance, for example, uses a Swiss legal structure with EU custodians <sup><a href="https://blog.quicknode.com/xstocks-solana-tokenized-stocks-2025/" target="_blank" rel="noopener">35</a></sup>.
+
+**Native onchain issuance.** The token is the share itself, not a wrapper of it. Securitize and Superstate have rolled this out in the US through their Direct Issuance and Opening Bell products <sup><a href="https://www.theblock.co/post/396683/securitize-tapped-to-tokenize-currencs-ordinary-shares" target="_blank" rel="noopener">36</a></sup>, with Securitize and Computershare extending the model to US-listed clients in April 2026 <sup><a href="https://cryptobriefing.com/computershare-taps-securitize-offer-tokenized-share-issuance-public-companies/" target="_blank" rel="noopener">37</a>,<a href="https://www.sec.gov/Archives/edgar/data/0001762096/000095010326006468/dp245961_425-securitize.htm" target="_blank" rel="noopener">38</a></sup>. Native issuance is harder than a wrapper because the chain becomes part of the official share register, requiring deeper coordination between the exchange, the depository, and the transfer agent.
+
+**Synthetic or derivative.** Cash-settled contracts or perpetual swaps that track the price without representing share ownership. The simplest technically but the most exposed regulatorily, especially in the Philippines. The SEC has actively enforced against synthetic exposure platforms operating without CASP authorization <sup><a href="https://bitcoinke.io/2026/04/sec-philippines-investor-alert-warning-over-crypto-platforms/" target="_blank" rel="noopener">8</a></sup>.
+
+### Token standards
+
+There are established standards for issuing regulated security tokens. The shared requirement across all of them is that only verified, eligible wallets can hold or transfer the tokens, with compliance enforced at the smart contract level rather than added on top.
+
+The most formally recognized is ERC-3643 on Ethereum, finalized in 2024 and used by issuers like ABN AMRO for tokenized digital bonds, with over 40 token issuances representing more than $28 billion in tokenized assets <sup><a href="https://www.chainalysis.com/blog/introduction-to-erc-3643-ethereum-rwa-token-standard/" target="_blank" rel="noopener">32</a>,<a href="https://www.taurushq.com/blog/erc-1400-for-tokenized-securities-analysis-and-deployment-with-taurus-capital/" target="_blank" rel="noopener">39</a>,<a href="https://www.hodlgroup.com/resources/insights/articles/erc-3643-the-token-standard-for-tokenization/" target="_blank" rel="noopener">49</a></sup>. The largest US issuers tend to use custom permissioned implementations instead: Backed Finance's xStocks use SPL Token-2022 on Solana and standard ERC-20 on Ethereum <sup><a href="https://blockeden.xyz/blog/2025/10/30/xstocks/" target="_blank" rel="noopener">50</a>,<a href="https://docs.xstocks.fi/frequently-asked-questions" target="_blank" rel="noopener">51</a></sup>, Ondo's USDY and OUSG use custom permissioned ERC-20 contracts with allowlist-gated transfers <sup><a href="https://github.com/ondoprotocol/usdy" target="_blank" rel="noopener">55</a></sup>, and BlackRock's BUIDL runs on Securitize's proprietary DS Protocol <sup><a href="https://build.avax.network/integrations/securitize" target="_blank" rel="noopener">41</a></sup>. All of these patterns are viable for a Philippine implementation.
+
+### Custody and identity
+
+For a 1:1 wrapper, the underlying shares need to sit in a Philippine-regulated custody account. The natural option is PDTC itself or a BSP-supervised trust corporation that holds the shares on behalf of the token issuer <sup><a href="https://www.tcs.com/who-we-are/newsroom/press-release/philippines-depository-tcs-bancs" target="_blank" rel="noopener">7</a></sup>. Either path requires PDTC engagement. For identity, the issuer needs a KYC provider to verify token holders before they can hold or transfer tokens. Coins.ph and PDAX already operate this kind of infrastructure at scale <sup><a href="https://coins.ph/blog/phpc-exits-sandbox/" target="_blank" rel="noopener">4</a>,<a href="https://photomadic.com/global-crypto-adoption-index-by-country-2025-top-nations-and-what-really-drives-adoption" target="_blank" rel="noopener">16</a></sup>.
+
+### Dividends and corporate actions
+
+Tokenized equities handle dividends in one of two ways. Some issuers, like Securitize, distribute them as separate stablecoin payments to holders via a smart contract <sup><a href="https://build.avax.network/integrations/securitize" target="_blank" rel="noopener">41</a></sup>. Others, like xStocks and Ondo, fold dividends into the token's value itself, so the holder's exposure grows automatically without a separate distribution event <sup><a href="https://coinmarketcap.com/cmc-ai/meta-tokenized-stock-xstock/what-is/" target="_blank" rel="noopener">54</a>,<a href="https://4pillars.io/en/articles/how-ondo-finance-is-redefining-tokenization-to-lead-the-rwa-market" target="_blank" rel="noopener">57</a></sup>. The second approach is simpler operationally and is more common in retail-facing products.
+
+Voting rights are typically not passed through in wrapper models like xStocks <sup><a href="https://www.kraken.com/xstocks" target="_blank" rel="noopener">34</a></sup>. Native onchain issuance preserves voting through the transfer agent <sup><a href="https://www.theblock.co/post/396683/securitize-tapped-to-tokenize-currencs-ordinary-shares" target="_blank" rel="noopener">36</a></sup>.
+
+Corporate actions like stock splits, rights offerings, and mergers require an oracle to flag the event and smart contract logic to respond. Chainlink is the dominant oracle provider in this space, with roughly 67 percent market share <sup><a href="https://www.inx.co/mapping-the-future-of-real-world-assets-the-top-rwa-tokenization-projects-in-2025/" target="_blank" rel="noopener">42</a></sup>. Pyth and Redstone are also used.
+
+### Stablecoin options for the cash leg
+
+The cash leg of any tokenized securities transaction is the stablecoin used to pay for tokens at purchase, to deliver dividends or coupon payments to holders, and to receive redemption proceeds when tokens are sold back to the issuer.
+
+PHPC is a candidate for the cash leg in domestic flows since it is the only regulated peso-pegged stablecoin currently in production. It is fully backed by cash and cash equivalents in Philippine bank accounts, audited, and issued on Polygon and Ronin <sup><a href="https://coins.ph/blog/phpc-exits-sandbox/" target="_blank" rel="noopener">4</a>,<a href="https://bitpinas.com/regulation/phpc-exits-sandbox/" target="_blank" rel="noopener">25</a></sup>. A Solana expansion was announced at Solana Breakpoint 2024 <sup><a href="https://solanacompass.com/learn/breakpoint-24/bringing-on-chain-fx-to-solana-product-keynote-by-wei-zhou" target="_blank" rel="noopener">58</a></sup>. PHPX, issued by a bank consortium led by UnionBank, RCBC, Cantilan Bank, and Rural Bank of Guinobatan, runs on Hedera <sup><a href="https://www.bitget.com/news/detail/12560604487943" target="_blank" rel="noopener">43</a></sup>. USDC remains the dominant stablecoin for dollar-denominated flows.
+
+---
+
+## Track 3: The Economic Case
+
+### Local precedent
+
+PHPC and the BTr's tokenized government bonds are the two regulated tokenized real-world assets currently in production in the Philippines. Together they form the closest local context for a tokenized private securities effort, though each provides a different kind of reference point.
+
+PHPC is the relevant precedent for the regulatory pathway. Coins.ph engaged BSP in early 2023, received sandbox approval in May 2024, met its key performance indicators within two months, and graduated to public production in July 2025 <sup><a href="https://coins.ph/blog/phpc-exits-sandbox/" target="_blank" rel="noopener">4</a>,<a href="https://bitpinas.com/regulation/phpc-exits-sandbox/" target="_blank" rel="noopener">25</a></sup>. From initial regulator engagement to public deployment took roughly two and a half years. Coins.ph has not publicly disclosed PHPC's circulating supply or transaction volume, so adoption metrics are not available as a reference point. In November 2025, Coins.ph joined Circle's Arc Public Testnet to explore deploying PHPC across the network <sup><a href="https://bitpinas.com/business/coins-ph-circle-testnet/" target="_blank" rel="noopener">44</a></sup>. PHPC is currently issued on Polygon and Ronin <sup><a href="https://bitpinas.com/regulation/phpc-exits-sandbox/" target="_blank" rel="noopener">25</a></sup>.
+
+The BTr's tokenized debt is the relevant precedent with documented adoption numbers. The November 2023 institutional bond raised PHP 15 billion against an initial PHP 10 billion target, closing at 6.50 percent fixed interest <sup><a href="https://business.inquirer.net/432006/ph-to-start-selling-tokenized-treasury-bonds" target="_blank" rel="noopener">1</a>,<a href="https://www.globalgovernmentfinance.com/philippines-offers-first-tokenised-treasury-bonds-in-digital-technology-drive/" target="_blank" rel="noopener">28</a></sup>. Government securities distribution through PDAX has demonstrated retail demand at minimum subscription sizes as low as PHP 500 <sup><a href="https://pdax.ph/learn/treasury-bonds-are-now-available-on-pdax-in-partnership-with-bonds-ph/" target="_blank" rel="noopener">2</a></sup>.
+
+### Demand: a possible staged approach
+
+A staged approach could leverage existing distribution channels in a particular order based on user readiness.
+
+**Stage one: existing PSE retail account holders.** PSE registered 2.86 million stock market accounts at end-2024, with 99.9 percent retail and 86.4 percent online <sup><a href="https://www.bworldonline.com/corporate/2025/06/06/677598/pse-reports-50-surge-in-stock-market-accounts-in-2024/" target="_blank" rel="noopener">18</a></sup>. These users already invest in Philippine equities and would value 24/7 settlement, fractional ownership, and self-custody as additional features. The transition cost is low because they already understand the underlying assets.
+
+**Stage two: local crypto-native users not yet in PSE equities.** The Philippines ranked ninth in the Chainalysis 2025 Global Crypto Adoption Index <sup><a href="https://bitpinas.com/feature/ph-chainalysis-2025/" target="_blank" rel="noopener">14</a>,<a href="https://www.chainalysis.com/blog/2025-global-crypto-adoption-index/" target="_blank" rel="noopener">15</a></sup>. Coins.ph processes over a billion dollars in annual crypto transfers <sup><a href="https://photomadic.com/global-crypto-adoption-index-by-country-2025-top-nations-and-what-really-drives-adoption" target="_blank" rel="noopener">16</a></sup>. PDAX has roughly four million users <sup><a href="https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/" target="_blank" rel="noopener">3</a></sup>. GCash has 94 million users <sup><a href="https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/" target="_blank" rel="noopener">3</a></sup>. These platforms reach a much larger Filipino base than the entire PSE brokerage industry. A tokenized PSE asset accessible through wallets these users already hold has lower onboarding friction than opening a traditional brokerage account.
+
+**Stage three: overseas Filipinos.** OFW remittances hit $35.63 billion in 2025, an all-time high <sup><a href="https://www.pna.gov.ph/articles/1269149" target="_blank" rel="noopener">19</a>,<a href="https://www.bworldonline.com/top-stories/2026/02/17/730931/ofw-remittances-hit-record-35-6b/" target="_blank" rel="noopener">20</a></sup>. Tokenized Philippine securities accessible via self-custody wallets reduce the bank account, broker, and timezone constraints that currently make Philippine investing difficult for overseas Filipinos. This is additive demand layered onto the local stages, not the primary driver.
+
+### International benchmarks for tokenized securities adoption
+
+The xStocks AUM trajectory provides the most directly comparable international reference. From launch in June 2025 through year end, Backed Finance grew its tokenized US equities AUM by roughly 9 times to approximately $186 million <sup><a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-341" target="_blank" rel="noopener">40</a></sup>. The tokenized stocks sector overall grew 50 times in the same period, from sub-$30 million to over $700 million <sup><a href="https://thedefiant.io/news/defi/rwas-became-wall-street-s-gateway-to-crypto-in-2025" target="_blank" rel="noopener">13</a></sup>. Ondo Global Markets, launched September 2025, reached $240 million in TVL within 48 hours and $320 million by October 2025 <sup><a href="https://changehero.io/blog/what-is-ondo-crypto/" target="_blank" rel="noopener">56</a></sup>. These figures are for US equity wrappers distributed globally, not for emerging market issuers, so direct extrapolation is imperfect.
+
+---
+
+## Synthesis: Pathways Forward
+
+*Important note on scope. This research is informational and exploratory. The pathways below are not investment, legal, or operational recommendations. Any actual implementation would require formal legal counsel, direct regulatory engagement with the SEC and BSP, and primary research with PDTC and other infrastructure providers. The author is not authorized to provide legal, tax, or investment advice.*
+
+The three structural models map onto three distinct timelines and stakeholder configurations.
+
+**The most achievable near-term path is tokenized REITs and corporate bonds.** The Philippines has six listed REITs with combined market capitalization in the hundreds of billions of pesos. REITs have built-in foreign ownership compliance frameworks and predictable distribution cadence <sup><a href="https://www.ntrc.gov.ph/images/journal/2017/J20171112C.pdf" target="_blank" rel="noopener">31</a></sup>. Corporate bonds traded on PDEx have similar properties. A 1:1 wrapper of REIT shares or corporate bonds, issued through a Stratbox-approved entity, custodied through PDTC, and settled in PHPC and USDC, would mirror the structure that PHPC used to graduate from sandbox to production. A plausible timeline based on the PHPC precedent is Stratbox application in 2026, sandbox period of 12 to 18 months, public launch in 2027 to 2028.
+
+**The medium-term path is tokenized PSE blue chips without foreign ownership caps.** Names like Ayala Corporation, BDO Unibank, and Jollibee Foods are operationally similar to the REIT path but require dividend orchestration and tax handling at scale. Realistic timeline: 2027 to 2029 for first listings, contingent on the first REIT or bond pilots succeeding.
+
+**The long-term path is native onchain issuance.** A new Initial Public Offering (IPO) issued natively as both traditional shares and on-chain tokens, with a transfer agent maintaining the master shareholder file across both formats, would require PSE rule changes, PDTC operational integration, and SEC registration of the tokenization framework as a permanent listing path. This is the kind of multi-stakeholder coordination that took the BTr roughly two years on its bond pilot <sup><a href="https://business.inquirer.net/432006/ph-to-start-selling-tokenized-treasury-bonds" target="_blank" rel="noopener">1</a>,<a href="https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/" target="_blank" rel="noopener">3</a></sup>. Realistic timeline: 2029 onward.
+
+**The synthetic path is constrained for domestic targeting.** Active SEC enforcement against unauthorized synthetic platforms makes this route legally untenable for offerings that target Philippine residents <sup><a href="https://bitcoinke.io/2026/04/sec-philippines-investor-alert-warning-over-crypto-platforms/" target="_blank" rel="noopener">8</a></sup>.
+
+### Open research questions for follow-up
+
+These are operational unknowns that any serious implementation effort would need to resolve through primary research, regulatory consultation, and stakeholder interviews. They are not legal-framework gaps but areas where public information does not yet provide an answer.
+
+- Will PDTC accept a token issuer as a lodging participant for the explicit purpose of issuing tokens against held securities? The legal structure exists <sup><a href="https://www.tcs.com/who-we-are/newsroom/press-release/philippines-depository-tcs-bancs" target="_blank" rel="noopener">7</a></sup> but operational willingness is unconfirmed.
+- How will the SEC treat a wrapper token that does not pass through voting rights? Voting is technically a security right under the SRC functional test <sup><a href="https://www.respicio.ph/commentaries/are-digital-assets-required-to-be-registered-with-the-sec-in-the-philippines" target="_blank" rel="noopener">21</a></sup>.
+- How would Philippine residency-based withholding tax be handled at scale? US ecosystem players have built solutions for US jurisdictions but the Philippine treaty matrix is different and would require its own implementation <sup><a href="https://build.avax.network/integrations/securitize" target="_blank" rel="noopener">41</a></sup>.
+- Will GCash, Coins.ph, or PDAX move first as an issuer rather than a distributor? Each has different licensing stacks and competitive incentives.
+
+### Closing note
+
+Several of the foundational pieces for tokenizing Philippine securities appear to exist today based on publicly available information: a working Strategic Sandbox, a CASP licensing framework, a precedent for tokenized government bonds, a regulated peso stablecoin, and a fully electronic securities depository. The questions that remain appear to be more operational than regulatory. Specific tokenized private securities rules are still to be elaborated by the SEC. Operational arrangements with PDTC for tokenized REITs or equities are untested. Tax handling for residency-based dividend distribution requires custom implementation. The thesis is that the country may have most of what it needs and that the remaining work is achievable on a documented timeline, not that implementation is trivial or imminent.
+
+---
+
+## References
+
+<a id="ref-1"></a>**[1]** Inquirer Business, "PH to start selling tokenized Treasury bonds," November 17, 2023. [https://business.inquirer.net/432006/ph-to-start-selling-tokenized-treasury-bonds](https://business.inquirer.net/432006/ph-to-start-selling-tokenized-treasury-bonds)
+
+<a id="ref-2"></a>**[2]** PDAX, "Invest in treasury bonds on PDAX." [https://pdax.ph/learn/treasury-bonds-are-now-available-on-pdax-in-partnership-with-bonds-ph/](https://pdax.ph/learn/treasury-bonds-are-now-available-on-pdax-in-partnership-with-bonds-ph/)
+
+<a id="ref-3"></a>**[3]** Ledger Insights, "Philippines to distribute tokenized government bonds via GCash wallet, PDAX crypto exchange," November 18, 2024. [https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/](https://www.ledgerinsights.com/philippines-to-distribute-tokenized-government-bonds-via-gcash-wallet-pdax-crypto-exchange/)
+
+<a id="ref-4"></a>**[4]** Coins.ph, "PHPC Stablecoin Readies to Exit Regulatory Sandbox," 2025. [https://coins.ph/blog/phpc-exits-sandbox/](https://coins.ph/blog/phpc-exits-sandbox/)
+
+<a id="ref-5"></a>**[5]** Cruz Marcelo & Tenefrancia, "SEC Introduces a Regulatory Sandbox to Foster the Growth of Innovative Products and Services in the Philippines," May 9, 2024. [https://cruzmarcelo.com/sec-introduces-a-regulatory-sandbox-to-foster-the-growth-of-innovative-products-and-services-in-the-philippines/](https://cruzmarcelo.com/sec-introduces-a-regulatory-sandbox-to-foster-the-growth-of-innovative-products-and-services-in-the-philippines/)
+
+<a id="ref-6"></a>**[6]** CoinGeek, "Philippines opens sandbox for 'crypto' service providers," April 2025. [https://coingeek.com/philippines-opens-sandbox-for-crypto-service-providers/](https://coingeek.com/philippines-opens-sandbox-for-crypto-service-providers/)
+
+<a id="ref-7"></a>**[7]** Tata Consultancy Services, "Philippines Depository rolls out TCS BaNCS for all asset classes." [https://www.tcs.com/who-we-are/newsroom/press-release/philippines-depository-tcs-bancs](https://www.tcs.com/who-we-are/newsroom/press-release/philippines-depository-tcs-bancs)
+
+<a id="ref-8"></a>**[8]** BitcoinKE, "REGULATION | SEC Philippines Issues Public Investor Alert Over Unauthorised dYdX and 6 Other Crypto Trading Platforms," April 2026. [https://bitcoinke.io/2026/04/sec-philippines-investor-alert-warning-over-crypto-platforms/](https://bitcoinke.io/2026/04/sec-philippines-investor-alert-warning-over-crypto-platforms/)
+
+<a id="ref-9"></a>**[9]** RedStone, "Real-World Assets in Onchain Finance Report H1 2025." [https://blog.redstone.finance/2025/06/26/real-world-assets-in-onchain-finance-report/](https://blog.redstone.finance/2025/06/26/real-world-assets-in-onchain-finance-report/)
+
+<a id="ref-10"></a>**[10]** InvestaX, "Q3 2025 Real World Asset Tokenization Market Report." [https://investax.io/blog/q3-2025-real-world-asset-tokenization-market-report](https://investax.io/blog/q3-2025-real-world-asset-tokenization-market-report)
+
+<a id="ref-11"></a>**[11]** CoinLaw, "Asset Tokenization Statistics 2026." [https://coinlaw.io/asset-tokenization-statistics/](https://coinlaw.io/asset-tokenization-statistics/)
+
+<a id="ref-12"></a>**[12]** Propeller Industries, "Real World Asset (RWA) Tokenization: The $10 Trillion Bridge Between TradFi and DeFi," December 2025. [https://www.propellerindustries.com/rwa-tokenization-the-10-trillion-bridge-between-tradfi-and-defi/](https://www.propellerindustries.com/rwa-tokenization-the-10-trillion-bridge-between-tradfi-and-defi/)
+
+<a id="ref-13"></a>**[13]** The Defiant, "RWAs Became Wall Street's Gateway to Crypto in 2025," December 2025. [https://thedefiant.io/news/defi/rwas-became-wall-street-s-gateway-to-crypto-in-2025](https://thedefiant.io/news/defi/rwas-became-wall-street-s-gateway-to-crypto-in-2025)
+
+<a id="ref-14"></a>**[14]** BitPinas, "Philippines Slides Again in 2025 Global Crypto Adoption Index, Now Ranked 9th," September 2025. [https://bitpinas.com/feature/ph-chainalysis-2025/](https://bitpinas.com/feature/ph-chainalysis-2025/)
+
+<a id="ref-15"></a>**[15]** Chainalysis, "The Chainalysis 2025 Global Adoption Index," September 2, 2025. [https://www.chainalysis.com/blog/2025-global-crypto-adoption-index/](https://www.chainalysis.com/blog/2025-global-crypto-adoption-index/)
+
+<a id="ref-16"></a>**[16]** Photomadic, "Global Crypto Adoption Index by Country 2025," January 2026. [https://photomadic.com/global-crypto-adoption-index-by-country-2025-top-nations-and-what-really-drives-adoption](https://photomadic.com/global-crypto-adoption-index-by-country-2025-top-nations-and-what-really-drives-adoption)
+
+<a id="ref-17"></a>**[17]** Philippine Stock Exchange, "PSE marks last trading day of 2025," December 29, 2025. [https://www.pse.com.ph/pse-marks-last-trading-day-of-2025/](https://www.pse.com.ph/pse-marks-last-trading-day-of-2025/)
+
+<a id="ref-18"></a>**[18]** BusinessWorld, "PSE reports 50% surge in stock market accounts in 2024," June 2025. [https://www.bworldonline.com/corporate/2025/06/06/677598/pse-reports-50-surge-in-stock-market-accounts-in-2024/](https://www.bworldonline.com/corporate/2025/06/06/677598/pse-reports-50-surge-in-stock-market-accounts-in-2024/)
+
+<a id="ref-19"></a>**[19]** Philippine News Agency, "OFW remittances reach record-high level in Dec 2025," February 16, 2026. [https://www.pna.gov.ph/articles/1269149](https://www.pna.gov.ph/articles/1269149)
+
+<a id="ref-20"></a>**[20]** BusinessWorld, "OFW remittances hit record $35.6B," February 17, 2026. [https://www.bworldonline.com/top-stories/2026/02/17/730931/ofw-remittances-hit-record-35-6b/](https://www.bworldonline.com/top-stories/2026/02/17/730931/ofw-remittances-hit-record-35-6b/)
+
+<a id="ref-21"></a>**[21]** Respicio & Co., "Are Digital Assets Required to Be Registered With the SEC in the Philippines," April 2026. [https://www.respicio.ph/commentaries/are-digital-assets-required-to-be-registered-with-the-sec-in-the-philippines](https://www.respicio.ph/commentaries/are-digital-assets-required-to-be-registered-with-the-sec-in-the-philippines)
+
+<a id="ref-22"></a>**[22]** Security Token Market, "Defining Security Tokens: List of All Countries with Legal Definitions of Digital Securities & Security Tokens." [https://blog.stomarket.com/defining-security-tokens-list-of-all-countries-with-legal-definitions-of-digital-securities-6b19eab6c330](https://blog.stomarket.com/defining-security-tokens-list-of-all-countries-with-legal-definitions-of-digital-securities-6b19eab6c330)
+
+<a id="ref-23"></a>**[23]** Grant Thornton Philippines, "SEC Stratbox (Strategic Sandbox)," May 2024. [https://www.grantthornton.com.ph/alerts-and-publications/technical-alerts/accounting-alerts/2024/sec-stratbox-strategic-sandbox/](https://www.grantthornton.com.ph/alerts-and-publications/technical-alerts/accounting-alerts/2024/sec-stratbox-strategic-sandbox/)
+
+<a id="ref-24"></a>**[24]** eLegal Philippines, "SEC Launches Strategic Sandbox (Stratbox)," May 2024. [https://elegal.ph/sec-launches-strategic-sandbox-stratbox/](https://elegal.ph/sec-launches-strategic-sandbox-stratbox/)
+
+<a id="ref-25"></a>**[25]** BitPinas, "Coins.ph's $PHPC Stablecoin Exits BSP Sandbox," June 2025. [https://bitpinas.com/regulation/phpc-exits-sandbox/](https://bitpinas.com/regulation/phpc-exits-sandbox/)
+
+<a id="ref-26"></a>**[26]** Sumsub, "The Philippines Issues New Crypto Rules to Protect Public and Maintain Trust," June 2025. [https://sumsub.com/media/news/the-philippines-issue-new-crypto-rules/](https://sumsub.com/media/news/the-philippines-issue-new-crypto-rules/)
+
+<a id="ref-27"></a>**[27]** Filgit, "What Happens to Your PSE Stocks if Your Broker Shuts Down?" December 2025. [https://filgit.com/blog/stocks/what-happens-to-your-pse-stocks-if-your-broker-shuts-down](https://filgit.com/blog/stocks/what-happens-to-your-pse-stocks-if-your-broker-shuts-down)
+
+<a id="ref-28"></a>**[28]** Global Government Fintech, "Philippines offers first tokenised Treasury bonds." [https://www.globalgovernmentfinance.com/philippines-offers-first-tokenised-treasury-bonds-in-digital-technology-drive/](https://www.globalgovernmentfinance.com/philippines-offers-first-tokenised-treasury-bonds-in-digital-technology-drive/)
+
+<a id="ref-29"></a>**[29]** ASEAN Briefing, "Foreign Ownership Rules in the Philippines." [https://www.aseanbriefing.com/news/foreign-ownership-rules-in-the-philippines-whats-allowed-and-restricted/](https://www.aseanbriefing.com/news/foreign-ownership-rules-in-the-philippines-whats-allowed-and-restricted/)
+
+<a id="ref-30"></a>**[30]** Gulf News, "Philippines updates foreign ownership rules: Key changes in investment limits and opportunities for global investors," 2026. [https://gulfnews.com/business/philippine-foreign-ownership-rules-updated-what-it-means-for-global-investors-1.500510016](https://gulfnews.com/business/philippine-foreign-ownership-rules-updated-what-it-means-for-global-investors-1.500510016)
+
+<a id="ref-31"></a>**[31]** National Tax Research Center Philippines, "Real Estate Investment Trust: A Legal and Regulatory Analysis." [https://www.ntrc.gov.ph/images/journal/2017/J20171112C.pdf](https://www.ntrc.gov.ph/images/journal/2017/J20171112C.pdf)
+
+<a id="ref-32"></a>**[32]** Chainalysis, "Introduction to ERC-3643 Tokens," April 2025. [https://www.chainalysis.com/blog/introduction-to-erc-3643-ethereum-rwa-token-standard/](https://www.chainalysis.com/blog/introduction-to-erc-3643-ethereum-rwa-token-standard/)
+
+<a id="ref-34"></a>**[34]** Kraken, "Tokenized Stocks and ETFs on Kraken." [https://www.kraken.com/xstocks](https://www.kraken.com/xstocks)
+
+<a id="ref-35"></a>**[35]** QuickNode, "xStocks on Solana: Stock Tokenization and What It Means for DeFi Developers," September 2025. [https://blog.quicknode.com/xstocks-solana-tokenized-stocks-2025/](https://blog.quicknode.com/xstocks-solana-tokenized-stocks-2025/)
+
+<a id="ref-36"></a>**[36]** The Block, "Securitize tapped to tokenize Currenc's ordinary shares." [https://www.theblock.co/post/396683/securitize-tapped-to-tokenize-currencs-ordinary-shares](https://www.theblock.co/post/396683/securitize-tapped-to-tokenize-currencs-ordinary-shares)
+
+<a id="ref-37"></a>**[37]** Cryptobriefing, "Computershare taps Securitize to offer tokenized share issuance for public companies," April 2026. [https://cryptobriefing.com/computershare-taps-securitize-offer-tokenized-share-issuance-public-companies/](https://cryptobriefing.com/computershare-taps-securitize-offer-tokenized-share-issuance-public-companies/)
+
+<a id="ref-38"></a>**[38]** SEC EDGAR Filing, "Securitize, Inc. Form 425 FY2026." [https://www.sec.gov/Archives/edgar/data/0001762096/000095010326006468/dp245961_425-securitize.htm](https://www.sec.gov/Archives/edgar/data/0001762096/000095010326006468/dp245961_425-securitize.htm)
+
+<a id="ref-39"></a>**[39]** Taurus, "ERC-1400 for Tokenized Securities: Analysis and Deployment with Taurus-CAPITAL," March 2025. [https://www.taurushq.com/blog/erc-1400-for-tokenized-securities-analysis-and-deployment-with-taurus-capital/](https://www.taurushq.com/blog/erc-1400-for-tokenized-securities-analysis-and-deployment-with-taurus-capital/)
+
+<a id="ref-40"></a>**[40]** Coinmetrics, "Tokenized Equities and the Rise of xStocks on Solana," December 2025. [https://coinmetrics.substack.com/p/state-of-the-network-issue-341](https://coinmetrics.substack.com/p/state-of-the-network-issue-341)
+
+<a id="ref-41"></a>**[41]** Avalanche Builder Hub, "Securitize." [https://build.avax.network/integrations/securitize](https://build.avax.network/integrations/securitize)
+
+<a id="ref-42"></a>**[42]** INX, "Mapping the Future of Real-World Assets: The Top RWA Tokenization Projects in 2025." [https://www.inx.co/mapping-the-future-of-real-world-assets-the-top-rwa-tokenization-projects-in-2025/](https://www.inx.co/mapping-the-future-of-real-world-assets-the-top-rwa-tokenization-projects-in-2025/)
+
+<a id="ref-43"></a>**[43]** Bitget News, "Philippine Banks Collaborate to Launch PHPX Stablecoin for Enhanced Cross-Border Payments," January 2025. [https://www.bitget.com/news/detail/12560604487943](https://www.bitget.com/news/detail/12560604487943)
+
+<a id="ref-44"></a>**[44]** BitPinas, "Coins.ph Teams Up with Circle's Arc Testnet to Expand PHPC Stablecoin Utility," November 2025. [https://bitpinas.com/business/coins-ph-circle-testnet/](https://bitpinas.com/business/coins-ph-circle-testnet/)
+
+<a id="ref-49"></a>**[49]** Hodl Group, "ERC-3643: the token standard for tokenization," February 2025. [https://www.hodlgroup.com/resources/insights/articles/erc-3643-the-token-standard-for-tokenization/](https://www.hodlgroup.com/resources/insights/articles/erc-3643-the-token-standard-for-tokenization/)
+
+<a id="ref-50"></a>**[50]** BlockEden, "58% Market Share, Zero Audits: Inside xStocks' High-Stakes Play to Tokenize Wall Street," October 2025. [https://blockeden.xyz/blog/2025/10/30/xstocks/](https://blockeden.xyz/blog/2025/10/30/xstocks/)
+
+<a id="ref-51"></a>**[51]** xStocks Documentation, "Frequently Asked Questions." [https://docs.xstocks.fi/frequently-asked-questions](https://docs.xstocks.fi/frequently-asked-questions)
+
+<a id="ref-52"></a>**[52]** BlockEden, "xStocks on Solana: A Developer's Field Guide to Tokenized Equities," September 2025. [https://blockeden.xyz/blog/2025/09/03/xstocks-on-solana-a-developer-s-field-guide-to-tokenized-equities/](https://blockeden.xyz/blog/2025/09/03/xstocks-on-solana-a-developer-s-field-guide-to-tokenized-equities/)
+
+<a id="ref-53"></a>**[53]** Solana Foundation, "xStocks: Tokenizing Equities on Solana," August 2025. [https://solana.com/news/case-study-xstocks](https://solana.com/news/case-study-xstocks)
+
+<a id="ref-54"></a>**[54]** CoinMarketCap, "What Is Meta tokenized stock (xStock) (METAX) And How Does It Work?" 2025. [https://coinmarketcap.com/cmc-ai/meta-tokenized-stock-xstock/what-is/](https://coinmarketcap.com/cmc-ai/meta-tokenized-stock-xstock/what-is/)
+
+<a id="ref-55"></a>**[55]** Ondo Protocol, "USDY GitHub Repository." [https://github.com/ondoprotocol/usdy](https://github.com/ondoprotocol/usdy)
+
+<a id="ref-56"></a>**[56]** Changehero, "What Is Ondo Crypto: A Deep Dive into Ondo Finance 2025," December 2025. [https://changehero.io/blog/what-is-ondo-crypto/](https://changehero.io/blog/what-is-ondo-crypto/)
+
+<a id="ref-57"></a>**[57]** Four Pillars, "How Ondo Finance Is Redefining Tokenization to Lead the RWA Market." [https://4pillars.io/en/articles/how-ondo-finance-is-redefining-tokenization-to-lead-the-rwa-market](https://4pillars.io/en/articles/how-ondo-finance-is-redefining-tokenization-to-lead-the-rwa-market)
+
+<a id="ref-58"></a>**[58]** Solana Compass, "Solana Integrates Philippine Peso Stablecoin PHPC: On-Chain FX and Remittance Solutions Coming to Solana," September 2024. [https://solanacompass.com/learn/breakpoint-24/bringing-on-chain-fx-to-solana-product-keynote-by-wei-zhou](https://solanacompass.com/learn/breakpoint-24/bringing-on-chain-fx-to-solana-product-keynote-by-wei-zhou)
+
+---
+
+*Hanyon Analytics produces independent research on DeFi, on-chain capital markets, and the convergence of crypto infrastructure with traditional finance. This research is informational and does not constitute investment, legal, or tax advice.*
