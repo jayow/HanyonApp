@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import { getPostBySlug, getPostSlugs } from "@/lib/posts";
+import { getPostBySlug, getPostSlugs, getAllPostsMeta } from "@/lib/posts";
 import { mdxComponents } from "@/components/MDXComponents";
 import { mdxOptions } from "@/lib/mdx-options";
 
@@ -14,6 +14,7 @@ export async function generateStaticParams() {
 }
 
 const SITE_URL = "https://hanyon.app";
+const DEFAULT_AUTHOR = "jayow";
 
 export async function generateMetadata({
   params,
@@ -22,15 +23,19 @@ export async function generateMetadata({
   try {
     const { frontmatter } = getPostBySlug(slug);
     const url = `${SITE_URL}/research/${slug}`;
+    const author = frontmatter.author || DEFAULT_AUTHOR;
     return {
       title: frontmatter.title,
       description: frontmatter.description,
+      authors: [{ name: author, url: SITE_URL }],
+      keywords: frontmatter.tags,
       openGraph: {
         type: "article",
         title: frontmatter.title,
         description: frontmatter.description,
         url,
         publishedTime: new Date(frontmatter.date).toISOString(),
+        authors: [author],
         tags: frontmatter.tags,
         siteName: "Hanyon Analytics",
         images: [
@@ -43,10 +48,12 @@ export async function generateMetadata({
         ],
       },
       twitter: {
-        card: "summary",
+        card: "summary_large_image",
         title: frontmatter.title,
         description: frontmatter.description,
         images: ["/logo.png"],
+        creator: "@jayowtrades",
+        site: "@jayowtrades",
       },
       alternates: {
         canonical: url,
@@ -76,45 +83,83 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const { frontmatter, content } = post;
+  const allPosts = getAllPostsMeta();
+  const meta = allPosts.find((p) => p.slug === slug);
+  const abstract = frontmatter.description || meta?.excerpt || "";
+  const author = frontmatter.author || DEFAULT_AUTHOR;
+  const url = `${SITE_URL}/research/${slug}`;
 
-  const jsonLd = {
+  const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: frontmatter.title,
-    description: frontmatter.description,
+    description: abstract,
+    abstract,
     datePublished: new Date(frontmatter.date).toISOString(),
-    author: {
-      "@type": "Organization",
-      name: "Hanyon Analytics",
-      url: SITE_URL,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Hanyon Analytics",
-      url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
-      },
-    },
+    dateModified: new Date(frontmatter.date).toISOString(),
+    author: { "@id": `${SITE_URL}/#author`, name: author },
+    publisher: { "@id": `${SITE_URL}/#organization` },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/research/${slug}`,
+      "@id": url,
     },
+    url,
+    inLanguage: "en-US",
     keywords: frontmatter.tags.join(", "),
+    about: frontmatter.tags.map((tag) => ({ "@type": "Thing", name: tag })),
+    isAccessibleForFree: true,
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Research",
+        item: `${SITE_URL}/research`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: frontmatter.title,
+        item: url,
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([articleJsonLd, breadcrumbJsonLd]),
+        }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <header className="mb-12">
-          <time className="text-sm text-neutral-400">
-            {formatDate(frontmatter.date)}
-          </time>
+          <div className="flex items-center gap-3 text-sm text-neutral-400">
+            <time>{formatDate(frontmatter.date)}</time>
+            <span>·</span>
+            <span>
+              By{" "}
+              <a
+                href="https://x.com/jayowtrades"
+                target="_blank"
+                rel="author noopener noreferrer"
+                className="text-neutral-600 hover:text-neutral-900 transition-colors"
+              >
+                {author}
+              </a>
+            </span>
+          </div>
           <h1 className="text-3xl font-bold tracking-tight mt-2 mb-4">
             {frontmatter.title}
           </h1>

@@ -4,6 +4,7 @@ export interface PostFrontmatter {
   description: string;
   tags: string[];
   published: boolean;
+  author?: string;
 }
 
 export interface PostMeta extends PostFrontmatter {
