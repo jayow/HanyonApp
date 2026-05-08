@@ -11,7 +11,7 @@ export function GET() {
       <title><![CDATA[${post.title}]]></title>
       <link>${SITE_URL}/research/${post.slug}</link>
       <guid isPermaLink="true">${SITE_URL}/research/${post.slug}</guid>
-      <description><![CDATA[${post.description}]]></description>
+      <description><![CDATA[${post.description || post.excerpt}]]></description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       ${post.tags.map((tag) => `<category>${tag}</category>`).join("\n      ")}
     </item>`

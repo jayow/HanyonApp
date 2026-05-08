@@ -8,6 +8,7 @@ export interface PostFrontmatter {
 
 export interface PostMeta extends PostFrontmatter {
   slug: string;
+  excerpt: string;
 }
 
 export interface Project {

@@ -20,7 +20,7 @@ export function PostCard({ post }: { post: PostMeta }) {
           {post.title}
         </h2>
         <p className="text-neutral-500 mt-2 leading-relaxed">
-          {post.description}
+          {post.description || post.excerpt}
         </p>
         {post.tags.length > 0 && (
           <div className="flex gap-2 mt-3">
