@@ -17,13 +17,15 @@ const dmSans = DM_Sans({
 const TALLY_FORM_ID = "Qo7A6l";
 
 export const metadata: Metadata = {
-  title: { absolute: "Zero to First Yield: a free beginner guide to DeFi" },
+  title: {
+    absolute: "Navigate your first steps into crypto: a free beginner guide",
+  },
   description:
     "A free guide to learning crypto and DeFi from zero, safely. Get it right away.",
   robots: { index: false, follow: false },
   alternates: { canonical: null },
   openGraph: {
-    title: "Zero to First Yield (free guide)",
+    title: "Navigate your first steps into crypto (free guide)",
     description:
       "Want to learn crypto, but scared and don't know where to start? Get the free guide.",
     url: "https://hanyon.app/free-guide",
@@ -95,9 +97,9 @@ export default function FreeGuidePage() {
             Want to learn crypto, but scared and don&apos;t know where to start?
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#3f443f]">
-            Get the free guide <em>Zero to First Yield</em>. It shows you, step
-            by step, how to go from zero to your first small DeFi deposit, and
-            back to fiat, without falling for scams.
+            Get the free guide <em>Navigate your first steps into crypto</em>.
+            It shows you, step by step, how to go from zero to your first small
+            DeFi deposit, and back to fiat, without falling for scams.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-[#3f443f]">
             Put in your email below and you&apos;ll get it right away.

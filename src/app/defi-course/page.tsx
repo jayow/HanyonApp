@@ -105,8 +105,9 @@ export default function DefiCoursePage() {
             back to fiat, safely, one step at a time, at your own pace.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-[#3f443f]">
-            Start with the free guide, <em>Zero to First Yield</em>. Put in
-            your email and you&apos;ll get it right away.
+            Start with the free guide,{" "}
+            <em>Navigate your first steps into crypto</em>. Put in your email
+            and you&apos;ll get it right away.
           </p>
           <a
             href="#early-bird"
@@ -216,9 +217,9 @@ export default function DefiCoursePage() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#3f443f]">
             Put in your email and you&apos;ll get the free guide{" "}
-            <em>Zero to First Yield</em> right away. Registration for the full
-            course opens soon, and everyone on this list gets the early bird
-            price.
+            <em>Navigate your first steps into crypto</em> right away.
+            Registration for the full course opens soon, and everyone on this
+            list gets the early bird price.
           </p>
           <div className="mt-6 rounded-lg bg-white/60 p-2 sm:p-4">
             <TallyEmbed
