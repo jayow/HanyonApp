@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { TallyEmbed } from "@/components/TallyEmbed";
 import { Fraunces, DM_Sans } from "next/font/google";
 
@@ -92,13 +93,12 @@ export default function DefiCoursePage() {
             Zero to First Yield · a beginner course by Focused Fire Trader
           </p>
           <h1 className={`${H} mt-5 text-4xl sm:text-5xl leading-[1.08]`}>
-            Want to learn crypto, but scared and don&apos;t know where to
-            start?
+            Want to learn crypto, but scared and don&apos;t know where to start?
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#3f443f]">
-            You&apos;ve heard that crypto can give you access to kinds of
-            yield that banks and traditional funds don&apos;t offer. But it
-            feels confusing, full of scams, and one wrong click could cost you.
+            You&apos;ve heard that crypto can give you access to kinds of yield
+            that banks and traditional funds don&apos;t offer. But it feels
+            confusing, full of scams, and one wrong click could cost you.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-[#3f443f]">
             This course takes you from zero to your first DeFi position, and
@@ -184,13 +184,22 @@ export default function DefiCoursePage() {
         {/* About */}
         <section className="py-12 border-t border-[#dedcd4]">
           <h2 className={`${H} text-3xl`}>Who&apos;s teaching</h2>
-          <p className="mt-5 text-lg leading-relaxed text-[#3f443f]">
-            Hi, I&apos;m Jake. I&apos;m a blockchain data analyst and I&apos;ve
-            worked as a DeFi risk analyst. I teach crypto through Focused Fire
-            Trader with one rule: survival and calibration over hype. No
-            signals, no &ldquo;get rich quick&rdquo;, just the skills to do it
-            safely yourself.
-          </p>
+          <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-center">
+            <Image
+              src="/defi-course-jake.jpg"
+              alt="Jake, the course teacher"
+              width={640}
+              height={640}
+              className="h-36 w-36 shrink-0 rounded-full object-cover"
+            />
+            <p className="text-lg leading-relaxed text-[#3f443f]">
+              Hi, I&apos;m Jake. I&apos;m a blockchain data analyst and
+              I&apos;ve worked as a DeFi risk analyst. I teach crypto through
+              Focused Fire Trader with one rule: survival and calibration over
+              hype. No signals, no &ldquo;get rich quick&rdquo;, just the skills
+              to do it safely yourself.
+            </p>
+          </div>
         </section>
 
         {/* Early bird + form */}
@@ -205,7 +214,10 @@ export default function DefiCoursePage() {
             <em>Zero to First Yield</em> right away.
           </p>
           <div className="mt-6 rounded-lg bg-white/60 p-2 sm:p-4">
-            <TallyEmbed formId={TALLY_FORM_ID} title="DeFi Course Early Bird List" />
+            <TallyEmbed
+              formId={TALLY_FORM_ID}
+              title="DeFi Course Early Bird List"
+            />
           </div>
           <p className="mt-3 text-sm text-[#5f655f]">
             Form not loading?{" "}
@@ -237,7 +249,9 @@ export default function DefiCoursePage() {
             Educational only. Not financial advice. No guaranteed returns.
             Crypto and DeFi carry real risk, including loss of your money.
           </p>
-          <p className="mt-2">© {new Date().getFullYear()} Focused Fire Trader</p>
+          <p className="mt-2">
+            © {new Date().getFullYear()} Focused Fire Trader
+          </p>
         </footer>
       </div>
     </div>
