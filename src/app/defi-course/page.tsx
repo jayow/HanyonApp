@@ -176,7 +176,7 @@ export default function DefiCoursePage() {
               <h2 className={`${H} text-2xl`}>Hi, I&apos;m Jake</h2>
               <p className="mt-2 text-lg text-[#3f443f]">
                 Educator, crypto trader and heavy DeFi user. Blockchain data
-                analyst and former DeFi risk analyst. No signals, no hype.
+                analyst and former DeFi risk analyst.
               </p>
             </div>
           </div>
