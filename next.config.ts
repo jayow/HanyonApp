@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
       {
+        source: "/free-guide",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
         source: "/zero-to-first-yield.pdf",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },

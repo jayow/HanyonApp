@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 
 // Pages that use their own standalone layout (no Hanyon header or footer).
-const STANDALONE_PATHS = ["/defi-course"];
+const STANDALONE_PATHS = ["/defi-course", "/free-guide"];
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
