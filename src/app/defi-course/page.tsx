@@ -104,11 +104,15 @@ export default function DefiCoursePage() {
             This course takes you from zero to your first DeFi position, and
             back to fiat, safely, one step at a time, at your own pace.
           </p>
+          <p className="mt-4 text-lg leading-relaxed text-[#3f443f]">
+            Start with the free guide, <em>Zero to First Yield</em>. Put in
+            your email and you&apos;ll get it right away.
+          </p>
           <a
             href="#early-bird"
             className="mt-8 inline-block rounded-md bg-[#1f7a4a] px-6 py-3 font-medium text-white hover:bg-[#19633c] transition-colors"
           >
-            Join the early bird list
+            Get the free guide
           </a>
         </section>
 
@@ -207,11 +211,14 @@ export default function DefiCoursePage() {
           id="early-bird"
           className="scroll-mt-8 py-12 border-t border-[#dedcd4]"
         >
-          <h2 className={`${H} text-3xl`}>Get the early bird discount</h2>
+          <h2 className={`${H} text-3xl`}>
+            Get the free guide and the early bird discount
+          </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#3f443f]">
-            Registration opens soon. Join the list now and you&apos;ll get the
-            early bird price when it opens, plus the free guide{" "}
-            <em>Zero to First Yield</em> right away.
+            Put in your email and you&apos;ll get the free guide{" "}
+            <em>Zero to First Yield</em> right away. Registration for the full
+            course opens soon, and everyone on this list gets the early bird
+            price.
           </p>
           <div className="mt-6 rounded-lg bg-white/60 p-2 sm:p-4">
             <TallyEmbed
