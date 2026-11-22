@@ -94,7 +94,12 @@ export default function DefiCoursePage() {
     <div
       className={`${dmSans.className} min-h-screen bg-[#f6f5f1] text-[#191b19]`}
     >
-      <div className="h-1.5 bg-[#1f7a4a]" />
+      <a
+        href="#offers"
+        className="block bg-[#1f7a4a] px-6 py-3 text-center text-base font-bold text-white sm:text-lg"
+      >
+        Presale is open · early bird price until Dec 5
+      </a>
       <div className="max-w-3xl mx-auto px-6">
         {/* Hero */}
         <section className="pt-16 pb-14 sm:pt-24">
@@ -187,7 +192,7 @@ export default function DefiCoursePage() {
           id="offers"
           className="scroll-mt-8 py-12 border-t border-[#dedcd4]"
         >
-          <p className="inline-block rounded-full bg-[#e7eee8] px-4 py-1 text-sm font-bold text-[#1f7a4a]">
+          <p className="inline-block rounded-md bg-[#1f7a4a] px-5 py-2 text-lg font-bold text-white">
             Presale · early bird until Dec 5
           </p>
           <h2 className={`${H} mt-4 text-3xl`}>Pick your plan</h2>
