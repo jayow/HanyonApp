@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/defi-course",
+        source: "/defi-course/:path*",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
       {
