@@ -48,7 +48,7 @@ const modules = [
 const outcomes = [
   "Your own secure wallet",
   "Your first DeFi position",
-  "A full trip back to your bank",
+  "On and off ramp with confidence",
   "A plan you can run on your own",
 ];
 
